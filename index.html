@@ -1,278 +1,646 @@
 <!DOCTYPE html>
 <html lang="ja">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>介護老人保健施設 星雲荘</title>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>医療法人安田会 介護老人保健施設 星雲荘</title>
 
-  <style>
-    *{
-      margin:0;
-      padding:0;
-      box-sizing:border-box;
-    }
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Noto+Sans+JP:wght@300;400;500;700&display=swap" rel="stylesheet">
 
-    body{
-      font-family: "Hiragino Sans", sans-serif;
-      color:#333;
-      line-height:1.8;
-      background:#fff;
-    }
+<style>
 
-    header{
-      position:fixed;
-      top:0;
-      width:100%;
-      background:white;
-      box-shadow:0 2px 10px rgba(0,0,0,0.05);
-      z-index:1000;
-    }
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+}
 
-    .header-inner{
-      max-width:1200px;
-      margin:auto;
-      padding:15px 20px;
-      display:flex;
-      justify-content:space-between;
-      align-items:center;
-    }
+html{
+scroll-behavior:smooth;
+}
 
-    .logo{
-      font-size:22px;
-      font-weight:bold;
-      color:#2d5c88;
-    }
+body{
+font-family:'Noto Sans JP', sans-serif;
+color:#333;
+line-height:1.8;
+background:#fff;
+}
 
-    nav a{
-      text-decoration:none;
-      color:#333;
-      margin-left:20px;
-      font-size:14px;
-    }
+/* header */
 
-    .hero{
-      height:100vh;
-      background:url('https://images.unsplash.com/photo-1516574187841-cb9cc2ca948b?q=80&w=2000&auto=format&fit=crop') center/cover;
-      display:flex;
-      align-items:center;
-      justify-content:center;
-      text-align:center;
-      color:white;
-      position:relative;
-    }
+header{
+position:fixed;
+top:0;
+left:0;
+width:100%;
+background:rgba(255,255,255,0.95);
+backdrop-filter:blur(10px);
+z-index:1000;
+box-shadow:0 2px 10px rgba(0,0,0,0.05);
+}
 
-    .hero::before{
-      content:"";
-      position:absolute;
-      inset:0;
-      background:rgba(0,0,0,0.35);
-    }
+.header-inner{
+max-width:1200px;
+margin:auto;
+padding:18px 30px;
+display:flex;
+justify-content:space-between;
+align-items:center;
+}
 
-    .hero-content{
-      position:relative;
-      z-index:1;
-      padding:20px;
-    }
+.logo{
+font-size:28px;
+font-weight:700;
+color:#2d5f8b;
+}
 
-    .hero h1{
-      font-size:48px;
-      margin-bottom:20px;
-    }
+nav ul{
+display:flex;
+gap:30px;
+list-style:none;
+}
 
-    .hero p{
-      font-size:20px;
-    }
+nav a{
+text-decoration:none;
+color:#333;
+font-weight:500;
+transition:0.3s;
+}
 
-    section{
-      padding:100px 20px;
-    }
+nav a:hover{
+color:#2d5f8b;
+}
 
-    .container{
-      max-width:1100px;
-      margin:auto;
-    }
+/* hero */
 
-    .section-title{
-      text-align:center;
-      font-size:36px;
-      margin-bottom:60px;
-      color:#2d5c88;
-    }
+.hero{
+height:100vh;
+background:
+linear-gradient(rgba(26,52,77,0.45),rgba(26,52,77,0.45)),
+url('https://images.unsplash.com/photo-1519494026892-80bbd2d6fd0d?q=80&w=1800&auto=format&fit=crop');
+background-size:cover;
+background-position:center;
+display:flex;
+align-items:center;
+justify-content:center;
+text-align:center;
+padding:20px;
+color:white;
+}
 
-    .about{
-      display:grid;
-      grid-template-columns:1fr 1fr;
-      gap:50px;
-      align-items:center;
-    }
+.hero-content{
+max-width:900px;
+}
 
-    .about img{
-      width:100%;
-      border-radius:20px;
-    }
+.hero h1{
+font-size:64px;
+margin-bottom:20px;
+font-weight:700;
+}
 
-    .cards{
-      display:grid;
-      grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
-      gap:30px;
-    }
+.hero p{
+font-size:24px;
+margin-bottom:10px;
+}
 
-    .card{
-      background:#f8fbff;
-      padding:30px;
-      border-radius:20px;
-      box-shadow:0 5px 20px rgba(0,0,0,0.05);
-    }
+.hero-sub{
+font-size:18px;
+opacity:0.9;
+}
 
-    .contact{
-      background:#2d5c88;
-      color:white;
-      text-align:center;
-    }
+/* section */
 
-    .contact a{
-      color:white;
-    }
+section{
+padding:100px 20px;
+}
 
-    footer{
-      text-align:center;
-      padding:30px;
-      background:#f5f5f5;
-      font-size:14px;
-    }
+.container{
+max-width:1200px;
+margin:auto;
+}
 
-    @media(max-width:768px){
+.section-title{
+text-align:center;
+font-size:42px;
+margin-bottom:60px;
+color:#2d5f8b;
+font-weight:700;
+}
 
-      .hero h1{
-        font-size:32px;
-      }
+.section-sub{
+text-align:center;
+margin-top:-40px;
+margin-bottom:60px;
+color:#777;
+}
 
-      .about{
-        grid-template-columns:1fr;
-      }
+/* philosophy */
 
-      nav{
-        display:none;
-      }
-    }
+.philosophy{
+background:#f7fbff;
+}
 
-  </style>
+.philosophy-box{
+background:white;
+padding:60px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+text-align:center;
+}
+
+.philosophy-box h3{
+font-size:36px;
+margin-bottom:30px;
+color:#2d5f8b;
+}
+
+.philosophy-box p{
+font-size:20px;
+margin-bottom:15px;
+}
+
+/* about */
+
+.about-grid{
+display:grid;
+grid-template-columns:1fr 1fr;
+gap:50px;
+align-items:center;
+}
+
+.about-grid img{
+width:100%;
+border-radius:20px;
+}
+
+/* services */
+
+.services{
+background:#f7fbff;
+}
+
+.cards{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:white;
+border-radius:20px;
+overflow:hidden;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+transition:0.3s;
+}
+
+.card:hover{
+transform:translateY(-10px);
+}
+
+.card img{
+width:100%;
+height:220px;
+object-fit:cover;
+}
+
+.card-content{
+padding:30px;
+}
+
+.card h3{
+margin-bottom:15px;
+font-size:24px;
+color:#2d5f8b;
+}
+
+.card p{
+color:#666;
+}
+
+/* news */
+
+.news-list{
+max-width:900px;
+margin:auto;
+}
+
+.news-item{
+display:flex;
+gap:30px;
+padding:25px 0;
+border-bottom:1px solid #ddd;
+}
+
+.news-date{
+color:#2d5f8b;
+font-weight:bold;
+min-width:120px;
+}
+
+/* recruit */
+
+.recruit{
+background:#f7fbff;
+}
+
+.recruit-box{
+background:white;
+padding:60px;
+border-radius:20px;
+box-shadow:0 10px 30px rgba(0,0,0,0.05);
+}
+
+.recruit-grid{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:25px;
+margin-top:40px;
+}
+
+.recruit-card{
+background:#f7fbff;
+padding:30px;
+border-radius:15px;
+text-align:center;
+}
+
+.recruit-card h4{
+margin-bottom:15px;
+font-size:22px;
+color:#2d5f8b;
+}
+
+.btn{
+display:inline-block;
+margin-top:40px;
+padding:16px 40px;
+background:#2d5f8b;
+color:white;
+text-decoration:none;
+border-radius:999px;
+transition:0.3s;
+}
+
+.btn:hover{
+background:#1f4767;
+}
+
+/* contact */
+
+.contact-box{
+background:#f7fbff;
+padding:60px;
+border-radius:20px;
+text-align:center;
+}
+
+.contact-item{
+margin-bottom:25px;
+font-size:20px;
+}
+
+/* footer */
+
+footer{
+background:#1f2d3a;
+color:white;
+padding:50px 20px;
+text-align:center;
+}
+
+footer p{
+opacity:0.8;
+}
+
+/* responsive */
+
+@media(max-width:768px){
+
+.hero h1{
+font-size:42px;
+}
+
+.hero p{
+font-size:18px;
+}
+
+.header-inner{
+flex-direction:column;
+gap:15px;
+}
+
+nav ul{
+flex-wrap:wrap;
+justify-content:center;
+gap:15px;
+}
+
+.about-grid{
+grid-template-columns:1fr;
+}
+
+.section-title{
+font-size:32px;
+}
+
+.philosophy-box,
+.recruit-box,
+.contact-box{
+padding:35px 25px;
+}
+
+}
+
+</style>
 </head>
 
 <body>
 
 <header>
-  <div class="header-inner">
-    <div class="logo">
-      介護老人保健施設 星雲荘
-    </div>
+<div class="header-inner">
 
-    <nav>
-      <a href="#">HOME</a>
-      <a href="#">法人について</a>
-      <a href="#">施設紹介</a>
-      <a href="#">情報発信</a>
-      <a href="#">採用情報</a>
-      <a href="#">お問い合わせ</a>
-    </nav>
-  </div>
+<div class="logo">
+医療法人安田会 星雲荘
+</div>
+
+<nav>
+<ul>
+<li><a href="#home">HOME</a></li>
+<li><a href="#about">法人について</a></li>
+<li><a href="#services">事業所紹介</a></li>
+<li><a href="#news">情報発信</a></li>
+<li><a href="#recruit">採用情報</a></li>
+<li><a href="#contact">お問い合わせ</a></li>
+</ul>
+</nav>
+
+</div>
 </header>
 
-<section class="hero">
-  <div class="hero-content">
-    <h1>心から慈しむ真心</h1>
-    <p>
-      いつも明るい笑顔　気持ちの良い挨拶
-    </p>
-  </div>
+<section class="hero" id="home">
+
+<div class="hero-content">
+
+<h1>心から慈しむ真心</h1>
+
+<p>いつも明るい笑顔　気持ちの良い挨拶</p>
+
+<div class="hero-sub">
+地域に寄り添い、安心できる介護サービスを提供します
+</div>
+
+</div>
+
 </section>
 
-<section>
-  <div class="container">
-    <h2 class="section-title">
-      星雲荘について
-    </h2>
+<section class="philosophy">
 
-    <div class="about">
-      <img src="https://images.unsplash.com/photo-1586105251261-72a756497a11?q=80&w=1600&auto=format&fit=crop">
+<div class="container">
 
-      <div>
-        <p>
-          医療法人安田会 介護老人保健施設 星雲荘は、
-          ご利用者さま一人ひとりに寄り添い、
-          安心して過ごせる環境づくりを大切にしています。
-        </p>
+<h2 class="section-title">理念</h2>
 
-        <br>
+<div class="philosophy-box">
 
-        <p>
-          地域とのつながりを大切にしながら、
-          真心あるケアをご提供いたします。
-        </p>
-      </div>
-    </div>
-  </div>
+<h3>利用者さま一人ひとりに寄り添う介護</h3>
+
+<p>私たちは、利用者さまとそのご家族に安心していただける環境づくりを大切にしています。</p>
+
+<p>心から慈しむ真心を持ち、地域社会に貢献できる介護サービスを提供します。</p>
+
+<p>「いつも明るい笑顔」「気持ちの良い挨拶」を大切にし、温かな施設運営を目指しています。</p>
+
+</div>
+
+</div>
+
 </section>
 
-<section style="background:#f9fbfd;">
-  <div class="container">
-    <h2 class="section-title">
-      施設紹介
-    </h2>
+<section id="about">
 
-    <div class="cards">
+<div class="container">
 
-      <div class="card">
-        <h3>安心の介護体制</h3>
-        <p>
-          専門スタッフが24時間体制でサポートします。
-        </p>
-      </div>
+<h2 class="section-title">法人について</h2>
 
-      <div class="card">
-        <h3>快適な生活空間</h3>
-        <p>
-          清潔感と居心地を大切にした空間づくり。
-        </p>
-      </div>
+<div class="about-grid">
 
-      <div class="card">
-        <h3>地域との交流</h3>
-        <p>
-          地域とのつながりを大切にしています。
-        </p>
-      </div>
+<img src="https://images.unsplash.com/photo-1504439468489-c8920d796a29?q=80&w=1200&auto=format&fit=crop">
 
-    </div>
-  </div>
+<div>
+
+<h3 style="font-size:32px; margin-bottom:25px; color:#2d5f8b;">
+医療法人安田会
+</h3>
+
+<p style="margin-bottom:20px;">
+医療法人安田会では、地域の皆さまが安心して生活できるよう、介護・福祉サービスを提供しております。
+</p>
+
+<p style="margin-bottom:20px;">
+利用者さま一人ひとりに寄り添い、心温まる支援を行うことで、地域社会への貢献を目指しています。
+</p>
+
+<p>
+介護老人保健施設を中心に、通所リハビリテーション、グループホーム、居宅介護支援事業所を運営しています。
+</p>
+
+</div>
+
+</div>
+
+</div>
+
 </section>
 
-<section class="contact">
-  <div class="container">
+<section class="services" id="services">
 
-    <h2 class="section-title" style="color:white;">
-      お問い合わせ
-    </h2>
+<div class="container">
 
-    <p>
-      TEL：0968-84-3717
-    </p>
+<h2 class="section-title">事業所紹介</h2>
 
-    <p>
-      〒865-0072 熊本県玉名市横島町横島3384
-    </p>
+<div class="cards">
 
-    <br>
+<div class="card">
 
-    <p>
-      LINE・メールフォームは後ほど追加可能です。
-    </p>
+<img src="https://images.unsplash.com/photo-1516549655169-df83a0774514?q=80&w=1200&auto=format&fit=crop">
 
-  </div>
+<div class="card-content">
+
+<h3>介護老人保健施設 星雲荘</h3>
+
+<p>
+利用者さまの在宅復帰を支援し、安心できる生活環境を提供しています。
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1512678080530-7760d81faba6?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>通所リハビリテーション 星雲荘</h3>
+
+<p>
+専門スタッフによるリハビリを通じて、日常生活機能の維持・向上を支援します。
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1526256262350-7da7584cf5eb?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>グループホーム るしだ</h3>
+
+<p>
+家庭的な雰囲気の中で、安心して暮らせる共同生活を支援しています。
+</p>
+
+</div>
+
+</div>
+
+<div class="card">
+
+<img src="https://images.unsplash.com/photo-1517486808906-6ca8b3f04846?q=80&w=1200&auto=format&fit=crop">
+
+<div class="card-content">
+
+<h3>居宅介護支援事業所 星雲荘</h3>
+
+<p>
+ケアマネジャーが利用者さまやご家族の相談に対応し、適切な介護サービスをご提案します。
+</p>
+
+</div>
+
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="news">
+
+<div class="container">
+
+<h2 class="section-title">情報発信</h2>
+
+<div class="news-list">
+
+<div class="news-item">
+<div class="news-date">2025.05.01</div>
+<div>ホームページを公開しました。</div>
+</div>
+
+<div class="news-item">
+<div class="news-date">2025.04.20</div>
+<div>施設見学・入所相談を受付しております。</div>
+</div>
+
+<div class="news-item">
+<div class="news-date">2025.04.01</div>
+<div>採用情報を更新しました。</div>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section class="recruit" id="recruit">
+
+<div class="container">
+
+<h2 class="section-title">採用情報</h2>
+
+<div class="recruit-box">
+
+<p style="text-align:center; font-size:20px;">
+地域に寄り添う介護を、一緒に支えてくださる仲間を募集しています。
+</p>
+
+<div class="recruit-grid">
+
+<div class="recruit-card">
+<h4>介護士</h4>
+<p>未経験歓迎</p>
+</div>
+
+<div class="recruit-card">
+<h4>看護師</h4>
+<p>正社員募集</p>
+</div>
+
+<div class="recruit-card">
+<h4>リハビリ職</h4>
+<p>経験者優遇</p>
+</div>
+
+<div class="recruit-card">
+<h4>ケアマネジャー</h4>
+<p>資格保有者歓迎</p>
+</div>
+
+</div>
+
+<div style="text-align:center;">
+<a href="#contact" class="btn">お問い合わせはこちら</a>
+</div>
+
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<div class="container">
+
+<h2 class="section-title">お問い合わせ</h2>
+
+<div class="contact-box">
+
+<div class="contact-item">
+📞 TEL：0968-84-3717
+</div>
+
+<div class="contact-item">
+📍 〒865-0072 熊本県玉名市横島町横島3384
+</div>
+
+<div class="contact-item">
+✉️ メールフォーム準備中
+</div>
+
+<div class="contact-item">
+💬 LINEお問い合わせ対応予定
+</div>
+
+</div>
+
+</div>
+
 </section>
 
 <footer>
-  © 医療法人安田会 介護老人保健施設 星雲荘
+
+<p>
+© 医療法人安田会 介護老人保健施設 星雲荘
+</p>
+
 </footer>
 
 </body>
